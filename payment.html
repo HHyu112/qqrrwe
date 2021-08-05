@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel= "stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div class="navbar">
+  <a href="index.html">Home</a>
+ <a href="Tutorials-and-FAQ.html">Tutorials and Faq</a>
+    <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+</div>
+    <br><br>
+     <br><br>
+    <div id="Timer"></div>
+    <div id= "payment-gateway">
+    <button class="tablink" onclick="openCrypto('BTC', this, '#FF9900')" id="defaultOpenbtc">BTC</button>
+<button class="tablink" onclick="openCrypto('BCH', this, 'lightblue')">BCH</button>
+<button class="tablink" onclick="openCrypto('LTC', this, 'gold')" id="defaultOpenltc">LTC</button>
+        <div id="BTC" class="tabcontent">
+        <div class="block">Total :<span id="orderprice_btc">25</span>
+        <br><br>
+
+    <span class="quote_bitcoin"><img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&fiat=USD&address=12iAb68C414u53AL5f7PtMBCFK5ezZxJc4" width="150" height="150"></span>
+    <section class="block-left">
+        <div id="orderprice_btc1">25</div>
+        <div>Please send the amount of bitcoin to address the given address as shown above. (Make sure to send enough to cover any coin transaction fees!)</div>
+        <div>Send  in (ONE payment) to :</div>
+    <div class="author_bitcoin">12iAb68C414u53AL5f7PtMBCFK5ezZxJc4</div>
+        <br>
+    <button id= "copytoclipboard" class= "copytoclipboard" onClick="copyaddressbtc()">Copy Address</button>
+    <button class="buttonload"><i class="fa fa-circle-o-notch fa-spin"></i>Awaiting Payment form You</button>
+
+        </section>
+
+        </div>
+            </div>
+        <div id="BCH" class="tabcontent">
+            <div class="block">Total :<span id="orderprice_bch">25</span>
+        <br><br>
+    <span class="quote_bitcoincash"><img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoincash&fiat=USD&address=qqhmgzn32jl9pufhwtald8m67mrwqmvqeujl7mr5es" width="150" height="150"></span>
+    <section class="block-left">
+        <div id="orderprice_bch1">25</div>
+        <div>Please send the amount of bitcoin to address the given address as shown above. (Make sure to send enough to cover any coin transaction fees!)</div>
+        <div>Send  in (ONE payment) to :</div>
+    <div class="author_bitcoincash">12iAb68C414u53AL5f7PtMBCFK5ezZxJc4</div>
+    <div></div>
+        <br>
+    <button id= "copytoclipboard" class= "copytoclipboard" onClick="copyaddressbch()">Copy Address</button>
+    <button class="buttonload"><i class="fa fa-circle-o-notch fa-spin"></i>Awaiting Payment form You</button>
+
+        </section>
+ </div>
+            </div>
+        <div id="LTC" class="tabcontent">
+        <div class="block">Total :<span id="orderprice_ltc">25</span>
+        <br><br>
+    <span class="quote_litecoin"><img src="https://www.bitcoinqrcodemaker.com/api/?style=litecoin&fiat=USD&address=Lav3xNomwXvGsESoy2WV7wwAE12K3JKJDu" width="150" height="150"></span>
+    <section class="block-left">
+        <div id="orderprice_ltc1">25</div>
+        <div>Please send the amount of bitcoin to address the given address as shown above. (Make sure to send enough to cover any coin transaction fees!)</div>
+        <div>Send in (ONE payment) to :</div>
+    <div class="author_litecoin">12iAb68C414u53AL5f7PtMBCFK5ezZxJc4</div>
+    <div></div>
+        <br>
+    <button id= "copytoclipboard" class= "copytoclipboard" onClick="copyaddressltc()">Copy Address</button>
+    <button class="buttonload"><i class="fa fa-circle-o-notch fa-spin"></i>Awaiting Payment form You</button>
+
+        </section>
+
+            </div>
+    
+        
+            </div>
+       
+    </div>
+  
+    </body>
+<script>
+        var timeLeft = 600;
+var elem = document.getElementById('Timer');
+
+var timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  if (timeLeft == 0) {
+    clearTimeout(timerId);
+    doSomething();
+  } else {
+    elem.innerHTML = timeLeft + ' seconds remaining';
+    timeLeft--;
+  }
+}
+function openCrypto(cryptoName,elmnt,color) {
+  
+	
+	var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+	
+	
+	
+	
+	
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+	
+  tablinks = document.getElementsByClassName("tablink");
+	
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cryptoName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+	
+	
+    
+	
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpenbtc").click();
+    </script>
+<script src="btc.js"></script>
+<script src="bch.js"></script>
+<script src="ltc.js"></script>
+<script src="pass.js"></script>
+<script src="btc_conversion.js"></script>
+<script src="bch_conversion.js"></script>
+<script src="ltc_conversion.js"></script>
+<script src="copyaddressbtc.js"></script>
+<script src="copyaddressbch.js"></script>
+<script src="copyaddressltc.js"></script>
+<script type="text/javascript">
+    function start(){
+    bitcoincashqr();
+    litecoinqr();
+    bitcoinqr();
+    }
+	window.onload=start();  
+</script>
+</html>
