@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel= "stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="Tutorials-and-FAQ.html">Tutorials and Faq</a>
+     <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <br><br>
+<h2>Checkout Form</h2>
+<p>Product will be sent to your email and we will contact you once payment approved.You may login with username and password sent to your email.</p>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="payment.html">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com" required>
+              <fieldset>
+                    <legend>Product Categories</legend>
+                <ol style="list-style: none;">
+                    
+                    <li><input type="radio" name="amount" value=25 required>Basic</li>
+					<li><input type="radio" name="amount" value=35 required>Pro</li>
+                    <li><input type="radio" name="amount" value=50 required>Premium</li>
+                   
+                </ol>
+                </fieldset> 
+              <fieldset>
+                    <legend>Leave a comment</legend>
+                    <textarea name="commentbox" rows="8" cols="100" placeholder="Leave a message " ></textarea>
+                </fieldset>
+          </div>
+
+        </div>
+        <input type="submit" value="Continue to checkout" class="btn" >
+      </form>
+    </div>
+  </div>
+  
+</div>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit" class="loginbutton" onclick="check()">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+     
+    </div>
+  </form>
+</div>
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-0d6c"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">© Copyright by BitStolen 2021 - All Right Reserved</p>
+      </div></footer>
+</body>
+<script>
+    function check(){
+    alert("Account will be given upon successful purchase");
+}
+    var mybutton = document.getElementById("myBtn");
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</html>
