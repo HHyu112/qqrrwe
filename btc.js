@@ -45,7 +45,7 @@ const ordernum = document.querySelector('.ordernum');
 function bitcoinqr() {
 	let random = Math.floor(Math.random() * quotes0.length);
 	var url_btc=(new URL(document.location));
-    var url_api_picture_btc= quotes1[random].quote1;
+    var url_api_picture_btc= quotes0[random].quote0;
     var url_api_btc=new URL(url_api_picture_btc);
     let url_params_btc=url_btc.searchParams;
 	let url_parameter_api_btc=url_api_btc.searchParams;
